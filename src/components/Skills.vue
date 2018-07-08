@@ -1,9 +1,13 @@
 <template>
   <div id="hello">
-    {{ name }}
+    <div class="holder">
+      <ul>
+        <li v-for="(data, index) in skills" :key='index'>{{ index }}. {{ data.skill }}</li>
+      </ul>
 
-    {{ btnStatus ? 'The button is disabled' : 'The button is active' }}
-    <button v-on:click="changeName" v-bind:disabled="btnStatus">Change Name</button>  
+      <p v-if="skills.length >= 1">You have more than 1 skills</p>
+      <p v-else>You have less than 1 skill</p>
+    </div>
   </div>
   
 </template>
@@ -13,8 +17,10 @@
     name: 'Skills',
     data(){
       return {
-        btnStatus : true,
-        name: 'Sam Sun'
+        skills : [
+          { "skill": "vue.js"},
+          { "skill": "Frontend Developer"}
+        ]
       }
     } 
   }
