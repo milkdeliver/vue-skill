@@ -5,7 +5,7 @@
         <li v-for="(data, index) in skills" :key='index'>{{ index }}. {{ data.skill }}</li>
       </ul>
 
-      <div v-bind:class="showObject"></div>
+      <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }"></div>
     </div>
   </div>
   
@@ -25,7 +25,10 @@
           'another-class': true
         },
         showAlert: true,
-        showAnotherClass: true
+        showAnotherClass: true,
+        bgColor: 'yellow',
+        bgWidth: '100%',
+        bgHeight: '30px'
       }
     } 
   }
