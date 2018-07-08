@@ -5,7 +5,7 @@
         <li v-for="(data, index) in skills" :key='index'>{{ index }}. {{ data.skill }}</li>
       </ul>
 
-      <div v-bind:class="{ alert: showAlert, 'another-class': showAnotherClass }"></div>
+      <div v-bind:class="showObject"></div>
     </div>
   </div>
   
@@ -20,6 +20,10 @@
           { "skill": "vue.js"},
           { "skill": "Frontend Developer"}
         ],
+        showObject:{
+          alert: true,
+          'another-class': true
+        },
         showAlert: true,
         showAnotherClass: true
       }
